@@ -56,7 +56,7 @@ for filename in [f for f in os.listdir('materials') if os.path.isfile(os.path.jo
     print(f"Processing {filename}")
     
     energy, n = get_n(f"materials/{filename}")
-    theta = np.linspace(np.pi / 2 - np.deg2rad(5), np.pi / 2, 1000)
+    theta = np.linspace(np.pi / 2 - np.deg2rad(5), np.pi / 2, 1000) # From 85 degrees to 90 degrees in radians
     theta_grid, n_grid = np.meshgrid(theta, n)
     
     FOM_values = FOM(theta_grid, n_grid)
@@ -71,7 +71,9 @@ for filename in [f for f in os.listdir('materials') if os.path.isfile(os.path.jo
         energy,
         FOM_values,
         shading='auto',
-        cmap='viridis'
+        cmap='viridis',
+        vmin=0,
+        vmax=np.max(FOM_values) # Can be set as a fixed value so the colorbar is consistent across different materials
     )
     
     c_Rs = ax_Rs.pcolormesh(
