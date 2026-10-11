@@ -62,8 +62,8 @@ for filename in [f for f in os.listdir('materials') if os.path.isfile(os.path.jo
     FOM_values = FOM(theta_grid, n_grid)
     Rs_values = Rs(k_z1(theta_grid), k_z2(theta_grid, n_grid))
     
-    fig_fom, ax_fom = plt.subplots()
-    fig_Rs, ax_Rs = plt.subplots()
+    fig_fom, ax_fom = plt.subplots(dpi=300)
+    fig_Rs, ax_Rs = plt.subplots(dpi=300)
     angle = np.rad2deg(theta)
     angle = 90 - angle  # Convert to angle from normal
     c_fom = ax_fom.pcolormesh(
