@@ -85,13 +85,13 @@ for filename in [f for f in os.listdir('materials') if os.path.isfile(os.path.jo
     )
     
     fig_fom.colorbar(c_fom, ax=ax_fom, label='FOM')
-    ax_fom.set_xlabel('Theta (degrees)')
+    ax_fom.set_xlabel('Angle of incidence (degrees)')
     ax_fom.set_ylabel('Energy (eV)')
     ax_fom.set_title(f'FOM for {filename.strip(".csv")}')    
     fig_fom.savefig(f"FOM_{filename.strip('.csv')}.png")
     
     fig_Rs.colorbar(c_Rs, ax=ax_Rs, label='Rs')
-    ax_Rs.set_xlabel('Theta (degrees)')
+    ax_Rs.set_xlabel('Angle of incidence (degrees)')
     ax_Rs.set_ylabel('Energy (eV)')
     ax_Rs.set_title(f'Rs for {filename.strip(".csv")}')
     fig_Rs.savefig(f"Rs_{filename.strip('.csv')}.png")
